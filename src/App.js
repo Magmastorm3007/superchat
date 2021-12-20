@@ -16,13 +16,14 @@ firebase.initializeApp({
   storageBucket: "superchat-b4aa9.appspot.com",
   messagingSenderId: "173342715830",
   appId: "1:173342715830:web:18bf2e9f48f04b61415b17",
+  //eslint-disable-next-line
   measurementId: "${config.measurementId}"
   
 })
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-const analytics = firebase.analytics();
+//const analytics = firebase.analytics();
 
 
 function App() {
@@ -120,7 +121,7 @@ function ChatMessage(props) {
 
   return (<>
     <div className={`message ${messageClass}`}>
-      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt="hehe" />
       <p>{text}</p>
     </div>
   </>)
