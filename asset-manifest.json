@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/superchat/static/css/main.d1a6eb95.css",
+    "main.js": "/superchat/static/js/main.6f366683.js",
+    "static/js/787.a02fcf53.chunk.js": "/superchat/static/js/787.a02fcf53.chunk.js",
+    "static/media/chatbg1.jpg": "/superchat/static/media/chatbg1.760796120d5a349153a8.jpg",
+    "static/media/3.jpg": "/superchat/static/media/3.23cbe794dabad4f13fcd.jpg",
+    "index.html": "/superchat/index.html",
+    "main.d1a6eb95.css.map": "/superchat/static/css/main.d1a6eb95.css.map",
+    "main.6f366683.js.map": "/superchat/static/js/main.6f366683.js.map",
+    "787.a02fcf53.chunk.js.map": "/superchat/static/js/787.a02fcf53.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d1a6eb95.css",
+    "static/js/main.6f366683.js"
+  ]
+}
