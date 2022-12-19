@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>⚛️🔥💬</h1>
+        <h1>🗣️💬</h1>
         <SignOut />
       </header>
 
@@ -105,9 +105,9 @@ function ChatRoom() {
 
     <form onSubmit={sendMessage}>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="You may text here" />
 
-      <button type="submit" disabled={!formValue}>🕊️</button>
+      <button type="submit" id="sel" disabled={!formValue}>➡</button>
 
     </form>
   </>)
@@ -121,7 +121,7 @@ function ChatMessage(props) {
 
   return (<>
     <div className={`message ${messageClass}`}>
-      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} alt="hehe" />
+      <img src={photoURL || 'https://pikmail.herokuapp.com/eduardo.alejandro.pool.ake@gmail.com?size=50'}  referrerpolicy="no-referrer" alt="load" />
       <p>{text}</p>
     </div>
   </>)
