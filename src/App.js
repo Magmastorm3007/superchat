@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>🗣️💬</h1>
+      <h1>🗣️💬</h1>
         <SignOut />
       </header>
 
@@ -55,7 +55,7 @@ function SignIn() {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <p>Do not violate the community guidelines or you will be banned for life!</p>
+      <p>Do not violate the community guidelines or your access will be revoked</p>
     </>
   )
 
@@ -71,7 +71,7 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection('messages');
-  const query = messagesRef.orderBy('createdAt').limit(25);
+  const query = messagesRef.orderBy('createdAt').limit(50);
 
   const [messages] = useCollectionData(query, { idField: 'id' });
 
@@ -82,7 +82,7 @@ function ChatRoom() {
     e.preventDefault();
 
     const { uid, photoURL } = auth.currentUser;
-
+    setFormValue('');
     await messagesRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -90,7 +90,7 @@ function ChatRoom() {
       photoURL
     })
 
-    setFormValue('');
+ 
     dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -105,9 +105,9 @@ function ChatRoom() {
 
     <form onSubmit={sendMessage}>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="You may text here" />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="write your message here" />
 
-      <button type="submit" id="sel" disabled={!formValue}>➡</button>
+      <button type="submit" disabled={!formValue}>➡</button>
 
     </form>
   </>)
@@ -121,7 +121,7 @@ function ChatMessage(props) {
 
   return (<>
     <div className={`message ${messageClass}`}>
-      <img src={photoURL || 'https://pikmail.herokuapp.com/eduardo.alejandro.pool.ake@gmail.com?size=50'}  referrerpolicy="no-referrer" alt="load" />
+    <img src={photoURL || 'https://pikmail.herokuapp.com/eduardo.alejandro.pool.ake@gmail.com?size=50'}  referrerpolicy="no-referrer" alt="load" />
       <p>{text}</p>
     </div>
   </>)
